@@ -1,0 +1,20 @@
+<%- include("particules/header.ejs") -%>
+<header>
+    <h1>Anonymous Poster</h1>
+</header>
+<div class="post">
+    <form action="/post" method="post" autocomplete="off">
+        <div class="title">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title" placeholder="Enter the title" required>
+        </div>
+        
+        <div class="content">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10" required>A story...</textarea>
+        </div>
+          <input type="submit" value="Post">
+      </form>
+
+</div>
+<%- include("particules/footer.ejs") -%>

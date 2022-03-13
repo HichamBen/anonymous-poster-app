@@ -1,0 +1,28 @@
+<%- include("particules/header.ejs") -%>
+   
+<main>
+<div class="container body">
+    <section class="row">
+        <div class="col-6">
+            <h1>Anonymous Poster</h1>
+            <p>Share your secret stories Anonymously</p>
+        </div>
+        <div class="col-6">
+            <form action="/" method="post" class="d-grid gap-2 col-6" style="margin: auto;" autocomplete="off">
+                <input type="email" class="form-control" name="email" placeholder="Email address" required>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-dark" style="margin-bottom: 15px;">Log In</button>
+            </form>
+            <a href="/signup" class="btn btn-success col-6" style="margin-left:138px;">Create New Account</a>
+            <hr>
+            <div class="social">
+                <h5>Sing in with:</h5>
+                <br>
+                <a class="google" href="/auth/google"><i class="fab fa-google"></i> Google</a>
+                <a class="facebook" href="/auth/facebook"><i class="fab fa-facebook-square"></i> Facebook</a>
+            </div>
+        </div>
+    </section>
+</div>
+</main>
+<%- include("particules/footer.ejs") -%>

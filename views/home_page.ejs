@@ -1,0 +1,32 @@
+<%- include("particules/header.ejs") -%>
+
+    <header>
+        <h1>Anonymous Poster</h1>
+        <nav>
+            <a href="/post" title="Add a story" class="add-story"><i class="fas fa-feather"></i></a>
+            <a href="/logout" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+        </nav>
+    </header>
+
+    <div class="main">
+
+        <div class="home">
+
+            <% posts.forEach(function(post) { %>
+                <section class="section">
+                    <div class="story">
+                        <h3><i class="fas fa-user-secret"></i>
+                            <%=post.title%>:
+                        </h3>
+                        <p>
+                            <%=post.content%>
+                        </p>
+                    </div>
+                </section>
+                <%})%>
+
+        </div>
+    </div>
+    </main>
+
+    <%- include("particules/footer.ejs") -%>
