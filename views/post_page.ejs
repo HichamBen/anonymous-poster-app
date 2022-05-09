@@ -1,20 +1,28 @@
 <%- include("particules/header.ejs") -%>
-<header>
-    <h1>Anonymous Poster</h1>
-</header>
-<div class="post">
-    <form action="/post" method="post" autocomplete="off">
-        <div class="title">
-            <label for="title">Title</label>
-            <input id="title" type="text" name="title" placeholder="Enter the title" required>
-        </div>
-        
-        <div class="content">
-            <label for="content">Content</label>
-            <textarea name="content" id="content" cols="30" rows="10" required>A story...</textarea>
-        </div>
-          <input type="submit" value="Post">
-      </form>
+    <header class="mb-5">
+        <h1>Anonymous Poster</h1>
+    </header>
 
-</div>
-<%- include("particules/footer.ejs") -%>
+    <div class="container-lg">
+        <form action="/post" method="post" class="col-7 col-lg-5 mx-auto" autocomplete="off">
+            <div class="row">
+                <div class="form-floating mb-3">
+                    <input id="title" class="form-control" type="text" name="title" placeholder="Enter the title"
+                        required>
+                    <label for="title" class="ms-2">Enter the title</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-floating mb-3">
+                    <textarea name="content" id="content" class="form-control" style="height:150px"
+                        placeholder="Write a story..." required></textarea>
+                    <label for="content" class="ms-2">Write a story...</label>
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-dark col-12" value="Post">
+        </form>
+    </div>
+
+    <%- include("particules/footer.ejs") -%>

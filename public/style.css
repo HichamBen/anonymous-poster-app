@@ -3,7 +3,6 @@
 body {
     margin: 0;
     font-family: 'Roboto Mono', monospace;
-    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 
 
@@ -44,10 +43,10 @@ nav>a:hover {
 
 .main {
     height: 100vh;
-    padding-top: 5px;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
 }
 
-.home {
+.home { 
     padding: 15px 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -77,8 +76,8 @@ h3 {
     font-size: 23px;
 }
 
-.story > p {
-     padding-left: 65px;
+.story>p {
+    padding-left: 65px;
 }
 
 .account {
@@ -104,4 +103,44 @@ h3 {
         height: 150px;
         justify-content: space-around;
     }
+}
+
+/* login page */
+
+main {
+    height: 100vh;
+}
+
+.anonymous {
+    color:silver;
+    background-image: linear-gradient(to right, rgb(19, 19, 95), rgb(92, 85, 85) 100%);
+    background-image: -moz-linear-gradient(to right, rgb(19, 19, 95), rgb(92, 85, 85) 100%);
+}
+
+.anonymous > div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+} 
+
+.google, .facebook {
+    width: 200px;
+    padding: 10px 35px;
+    margin-right: 15px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.google {
+    background-color: #dd4b39;
+}
+
+.facebook {
+    background-color: #3B5998;
+}
+
+.google:hover, .facebook:hover {
+    opacity: 0.8;
+    color: white;
 }
