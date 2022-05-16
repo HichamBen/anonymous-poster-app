@@ -6,9 +6,6 @@ const mysqlConnection = require("./database").mysqlConnection;
 
 const validationPass = require("./gen-valid-pass").validationPass;
 
-require("dotenv").config({
-    path: "../environement/.env"
-});
 
 /*------------- Local Strategy configuration---------------*/
 const customField = {

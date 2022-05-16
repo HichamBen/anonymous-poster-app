@@ -1,14 +1,4 @@
 const mysql = require("mysql2");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-
-dotenv.config({
-    path: "../environement/.env",
-});
-
-// Mongodb for store sessions
-// const db = mongoose.connect(process.env.URL_DB);
-const connectionMongodb = mongoose.connect(process.env.URL_DB)
 
 // Mysql for store users and posts 
 const pool =  mysql.createPool({
@@ -20,4 +10,3 @@ const pool =  mysql.createPool({
 });
 
 module.exports.mysqlConnection = pool;
-module.exports.mongodbConnection = connectionMongodb;

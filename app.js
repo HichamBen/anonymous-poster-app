@@ -1,13 +1,13 @@
-const dotenv = require("dotenv").config({
+require("dotenv").config({
     path: "./environement/.env"
 });
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const sessionsDB = require("./config/database").mongodbConnection;
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
-let session_store;
+
 
 const app = express();
 
@@ -16,20 +16,21 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // Configure the database to hold session
-sessionsDB.then(db => {
- session_store = MongoStore.create({
-    client: db.connection.getClient(),
+// Mongodb for store sessions
+// const db = mongoose.connect(process.env.URL_DB);
+
+const store = MongoStore.create({
+    mongoUrl: process.env.URL_DB,
     collectionName: "sessions"
 });
-});
 
- 
+
 // Configure the session 
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    store: session_store,
+    store: store,
     cookie: {
         maxAge: 24 * 60 * 60 * 1000,
     }

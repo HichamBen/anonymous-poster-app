@@ -69,7 +69,7 @@ router.get("/home", function (req, res) {
 
 // Log out request
 router.get("/logout", function (req, res) {
-    req.logOut();
+    req.logout();
     res.redirect("/");
 });
 
